@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Exchange Rate"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/textViewID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button"
+        android:layout_marginBottom="250dp"
+        android:layout_centerInParent="true"
+        android:text="Exchange Rate will be shown here" />
+
+    <Spinner
+        android:id="@+id/spinner_base_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/button"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="150dp" />
+
+    <Spinner
+        android:id="@+id/spinner_target_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="150dp" />
+
+</RelativeLayout>
