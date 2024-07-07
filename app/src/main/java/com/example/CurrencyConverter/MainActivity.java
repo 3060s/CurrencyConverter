@@ -92,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                             amount = Double.parseDouble(amountText);
                         } catch (NumberFormatException e) {
                             e.printStackTrace();
-                            // Handle the case where the text in the TextView could not be parsed to a double
                         }
                     }
                     double convertedAmountValue = ExchangeRateApi.convertCurrency(conversionRates, baseCurrency, targetCurrency, amount);
