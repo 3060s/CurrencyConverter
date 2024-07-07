@@ -1,5 +1,3 @@
 <resources>
     <string name="app_name">CurrencyConverter</string>
-    <string name="testString">Test String!</string>
-    <string name="testButton">Click me!</string>
 </resources>

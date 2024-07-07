@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 Spinner baseCurrencySpinner = findViewById(R.id.spinner_base_currency);
                 Spinner targetCurrencySpinner = findViewById(R.id.spinner_target_currency);
                 TextView textView = findViewById(R.id.textViewID);
+                TextView convertedAmount = findViewById(R.id.convertedAmountID);
 
                 String baseCurrency = baseCurrencySpinner.getSelectedItem().toString();
                 String targetCurrency = targetCurrencySpinner.getSelectedItem().toString();
@@ -83,6 +84,19 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     double exchangeRate = ExchangeRateApi.calculateExchangeRate(conversionRates, baseCurrency, targetCurrency);
                     textView.setText("Exchange Rate: " + exchangeRate);
+
+                    String amountText = convertedAmount.getText().toString();
+                    double amount = 0;
+                    if (!amountText.equals("Converted Amount")) {
+                        try {
+                            amount = Double.parseDouble(amountText);
+                        } catch (NumberFormatException e) {
+                            e.printStackTrace();
+                            // Handle the case where the text in the TextView could not be parsed to a double
+                        }
+                    }
+                    double convertedAmountValue = ExchangeRateApi.convertCurrency(conversionRates, baseCurrency, targetCurrency, amount);
+                    convertedAmount.setText("Converted Amount: " + convertedAmountValue);
                 } catch (JSONException e) {
                     e.printStackTrace();
                     textView.setText("Error calculating exchange rate");

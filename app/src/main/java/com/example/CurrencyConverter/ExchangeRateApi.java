@@ -48,4 +48,9 @@ public class ExchangeRateApi {
         double targetRate = conversionRates.getDouble(targetCurrency);
         return targetRate / baseRate;
     }
+
+    public static double convertCurrency(JSONObject conversionRates, String baseCurrency, String targetCurrency, double amount) throws JSONException {
+        double exchangeRate = calculateExchangeRate(conversionRates, baseCurrency, targetCurrency);
+        return amount * exchangeRate;
+    }
 }
