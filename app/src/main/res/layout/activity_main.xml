@@ -10,6 +10,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
         android:text="Get Exchange Rate"
         android:layout_centerInParent="true" />
 
@@ -18,6 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/button"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="20dp"
         android:layout_marginBottom="250dp"
         android:layout_centerInParent="true"
         android:text="Exchange Rate will be shown here" />
@@ -27,6 +30,7 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_above="@id/button"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginStart="100dp"
         android:layout_marginBottom="140dp"
         android:inputType="numberDecimal"
@@ -37,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/button"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginStart="250dp"
         android:layout_marginBottom="150dp" />
 
@@ -45,16 +50,18 @@
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/button"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginStart="100dp"
         android:layout_marginTop="150dp"
-        android:text="Converted Amount"
-        android:maxLength="20"/>
+        android:textSize="20dp"
+        android:text="Converted Amount" />
 
     <Spinner
         android:id="@+id/spinner_target_currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button"
+        android:fontFamily="sans-serif-medium"
         android:layout_marginStart="250dp"
         android:layout_marginTop="150dp" />
 

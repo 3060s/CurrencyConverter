@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -85,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
                     double exchangeRate = ExchangeRateApi.calculateExchangeRate(conversionRates, baseCurrency, targetCurrency);
                     textView.setText("Exchange Rate: " + exchangeRate);
 
-                    String amountText = convertedAmount.getText().toString();
+                    EditText baseAmount = findViewById(R.id.baseAmountID);
+                    String amountText = baseAmount.getText().toString();
                     double amount = 0;
                     if (!amountText.equals("Converted Amount")) {
                         try {
@@ -95,7 +97,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     double convertedAmountValue = ExchangeRateApi.convertCurrency(conversionRates, baseCurrency, targetCurrency, amount);
-                    convertedAmount.setText("Converted Amount: " + convertedAmountValue);
+                    String formattedAmount = String.format("%.2f", convertedAmountValue);
+                    convertedAmount.setText("Converted Amount: " + formattedAmount);
                 } catch (JSONException e) {
                     e.printStackTrace();
                     textView.setText("Error calculating exchange rate");
